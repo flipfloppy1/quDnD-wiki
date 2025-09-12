@@ -1,0 +1,17 @@
+<app-header title="Home"></app-header>
+
+  <main>
+    <div class="categories">
+      <div class="category">
+        <h3>Feats</h3>
+        @if (featsLoading) {
+          <mat-spinner></mat-spinner>
+        } @else {
+          <div (click)="router.navigateByUrl('/feat/' + feat.id)" class="category-entry" *ngFor="let feat of feats">
+            <img class="entry-img" [src]="feat.imgUrl" />
+            <span class="entry-text">{{feat.name}}</span>
+          </div>
+        }
+      </div>
+    </div>
+  </main>

@@ -1,0 +1,13 @@
+.feat-title-container {
+  display: flex;
+  gap: 30px;
+  align-content: center;
+}
+
+.feat-img {
+  height: 60px;
+}
+
+.feat-desc {
+  font-style: italic;
+}

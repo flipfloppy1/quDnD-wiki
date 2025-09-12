@@ -1,0 +1,28 @@
+.header-container {
+  display: flex;
+  position: fixed;
+  justify-content: space-between;
+  width: 100%;
+  padding-left: 40px;
+  padding: 20px;
+  background-color: rgb(40, 60, 80);
+}
+
+.header-title-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-title {
+  text-align: left;
+  margin: 0;
+  font-size: 20pt;
+  min-height: 20pt;
+}
+
+.header-subtitle {
+  text-align: left;
+  margin: 0;
+  font-size: 16pt;
+  min-height: 16pt;
+}

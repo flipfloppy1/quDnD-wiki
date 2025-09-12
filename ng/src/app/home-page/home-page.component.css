@@ -1,0 +1,25 @@
+.categories {
+  display: flex;
+  gap: 50px;
+}
+
+.category {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 200px;
+}
+
+.category-entry {
+  display: flex;
+  gap: 10px;
+  align-content: center;
+}
+
+.entry-img {
+  height: 14pt;
+}
+
+.entry-text {
+  font-size: 14pt;
+}

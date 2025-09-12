@@ -1,0 +1,13 @@
+<app-header title="Feat" [subtitle]="feat?.name ?? ''"></app-header>
+
+  <main>
+    @if (!feat) {
+      <mat-spinner></mat-spinner>
+    } @else {
+      <div class="feat-title-container">
+        <img class="feat-img" [src]="feat.imgUrl" />
+        <h2>{{feat.name}}</h2>
+      </div>
+      <p class="feat-desc">{{feat.description + '.'}}</p>
+    }
+  </main>
