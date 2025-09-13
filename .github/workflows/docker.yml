@@ -20,4 +20,4 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: flipfloppy1/qudnd-wiki:latest
+          tags: ghcr.io/flipfloppy1/qudnd-wiki:latest
