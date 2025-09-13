@@ -1,13 +1,50 @@
 .feat-title-container {
   display: flex;
   gap: 30px;
-  align-content: center;
+  align-items: center;
 }
 
 .feat-img {
-  height: 60px;
+  height: 100px;
+  image-rendering: pixelated;
+}
+
+.feat-title {
+  font-size: 20px;
 }
 
 .feat-desc {
   font-style: italic;
+}
+
+.ability-desc {
+  text-align: justify;
+}
+
+.summary-container {
+  display: flex;
+  gap: 20px;
+  padding: 10px;
+  background: linear-gradient(90deg, rgb(20, 30, 40), rgb(40, 60, 80));
+}
+
+.no-entries {
+  font-style: italic;
+  color: rgb(200, 250, 230);
+}
+
+.ability-container {
+  max-width: 600px;
+}
+
+.details-container {
+  gap: 30px;
+  display: flex;
+}
+
+.buff-container {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  background: linear-gradient(90deg, rgb(20, 30, 40), rgb(40, 60, 80));
 }

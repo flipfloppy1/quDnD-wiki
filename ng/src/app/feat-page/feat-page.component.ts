@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { HttpClient } from "@angular/common/http";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
+import * as defs from "../app.definitions";
 
 @Component({
   selector: "app-feat-page",
@@ -13,7 +14,7 @@ import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 })
 export class FeatPageComponent {
   featName = "";
-  feat: any;
+  feat?: defs.Feat;
   route = inject(ActivatedRoute);
   http = inject(HttpClient);
   snackbar = inject(MatSnackBar);
@@ -31,6 +32,19 @@ export class FeatPageComponent {
         this.featLoading = false;
       },
     });
+  }
+
+  formatStatOffset(stat: string): string {
+    let statNum = Number(stat);
+    if (Number.isNaN(statNum)) {
+      return stat;
+    }
+
+    if (statNum < 0) {
+      return "-" + stat;
+    }
+
+    return "+" + stat;
   }
 
   ngOnInit() {

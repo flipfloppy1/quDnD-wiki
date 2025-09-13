@@ -13,11 +13,12 @@
 .category-entry {
   display: flex;
   gap: 10px;
-  align-content: center;
+  align-items: center;
 }
 
 .entry-img {
-  height: 14pt;
+  height: 40px;
+  image-rendering: pixelated;
 }
 
 .entry-text {
