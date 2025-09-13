@@ -24,3 +24,9 @@
 .entry-text {
   font-size: 14pt;
 }
+
+@media screen and (width <= 900px) {
+  .categories {
+    flex-direction: column;
+  }
+}

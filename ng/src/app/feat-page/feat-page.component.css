@@ -48,3 +48,9 @@
   padding: 10px;
   background: linear-gradient(90deg, rgb(20, 30, 40), rgb(40, 60, 80));
 }
+
+@media screen and (width <= 900px) {
+  .details-container {
+    flex-direction: column;
+  }
+}
