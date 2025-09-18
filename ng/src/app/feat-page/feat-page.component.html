@@ -11,12 +11,13 @@
       <p class="feat-desc">{{feat.description + '.'}}</p>
       <div class="details-container">
         <div class="ability-container">
-          <h3>Abilities</h3>
+          <h2>Abilities</h2>
           @if (!feat.abilities.length) {
             <p class="no-entries">No abilities.</p>
           } @else {
           @for (ability of feat.abilities; track ability) {
             <div class="ability">
+              <div class="highlight-container">
               <div class="summary-container">
                 <span class="ability-duration">{{ability.duration}}</span>
                 <span class="ability-summary">{{ability.summary + '.'}}</span>
@@ -32,28 +33,47 @@
                 }
               </ul>
               }
-              <h4>Effects</h4>
+              </div>
+              <div class="highlight-container">
+              <h3>Effects</h3>
               @if (!ability.effects.length) {
                 <p class="no-entries">No effects.</p>
               } @else {
-                @for (effect of ability.effects; track effect) {
-                <div class="effect-container">
-                  <h5>{{effect.effect}}</h5>
-                  @if (!effect.conditions.length) {
-                    <p class="no-entries">No effect conditions.</p>
-                  } @else {
-                    <ul class="effect-conditions-container">
-
-                      @for (condition of effect.conditions; track condition) {
-                        <li>
-                          {{condition}}
-                        </li>
+              <div class="effects-container">
+              @for (effect of ability.effects; track effect) {
+                <app-dropdown>
+                  <div class="title summary-container">
+                    <span class="ability-summary">{{effect.effect}}</span>
+                  </div>
+                  <div class="content">
+                    <h4>Duration</h4>
+                    <span class="ability-summary">{{format.diceRoll(effect.rounds) + (format.diceRoll(effect.rounds) === '1' ? ' Round' : ' Rounds')}}</span>
+                    <h4>Reasons</h4>
+                    @if (!effect.reasons.length) {
+                      <p class="no-entries">No reasons.</p>
+                    } @else {
+                    <ul>
+                      @for (reason of effect.reasons; track reason) {
+                        <li>{{reason}}</li>
                       }
                     </ul>
-                  }
-                </div>
-                }
+                    }
+                    <h4>Conditions</h4>
+                    @if (!effect.conditions.length) {
+                      <p class="no-entries">No conditions.</p>
+                    } @else {
+                    <ul>
+                      @for (condition of effect.conditions; track condition) {
+                        <li>{{condition}}</li>
+                      }
+                    </ul>
+                    }
+                  </div>
+                </app-dropdown>
               }
+              </div>
+              }
+            </div>
             </div>
           }
           }
@@ -66,7 +86,7 @@
           @for (buff of feat.buffs; track buff) {
             <div class="ability">
               <div class="buff-container">
-                <span class="ability-duration">{{formatStatOffset(buff.value)}}</span>
+                <span class="ability-duration">{{format.statOffset(buff.value)}}</span>
                 <span class="ability-summary">{{buff.stat}}</span>
               </div>
               <h4>Conditions</h4>

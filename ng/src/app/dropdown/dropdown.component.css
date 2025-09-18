@@ -1,0 +1,20 @@
+.title-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  cursor: pointer;
+  border: 1px grey solid;
+  background: linear-gradient(90deg, rgb(20, 30, 40), rgb(40, 60, 80));
+}
+
+.content-container {
+  background: linear-gradient(345deg, rgb(20, 40, 60), rgb(40, 60, 80));
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.dropdown-icon {
+  cursor: pointer;
+  user-select: none;
+}

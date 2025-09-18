@@ -4,11 +4,13 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { HttpClient } from "@angular/common/http";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
+import { FormatterService } from "../services/formatter.service";
+import { DropdownComponent } from "../dropdown/dropdown.component";
 import * as defs from "../app.definitions";
 
 @Component({
   selector: "app-feat-page",
-  imports: [HeaderComponent, MatProgressSpinnerModule],
+  imports: [DropdownComponent, HeaderComponent, MatProgressSpinnerModule],
   templateUrl: "./feat-page.component.html",
   styleUrl: "./feat-page.component.css",
 })
@@ -18,6 +20,7 @@ export class FeatPageComponent {
   route = inject(ActivatedRoute);
   http = inject(HttpClient);
   snackbar = inject(MatSnackBar);
+  format = inject(FormatterService);
   featLoading = true;
 
   loadFeat(featId: string) {
@@ -32,19 +35,6 @@ export class FeatPageComponent {
         this.featLoading = false;
       },
     });
-  }
-
-  formatStatOffset(stat: string): string {
-    let statNum = Number(stat);
-    if (Number.isNaN(statNum)) {
-      return stat;
-    }
-
-    if (statNum < 0) {
-      return "-" + stat;
-    }
-
-    return "+" + stat;
   }
 
   ngOnInit() {

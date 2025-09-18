@@ -1,0 +1,19 @@
+<div (click)="toggle()" class="title-container">
+  <div class="title-stuff">
+    <ng-content select=".title"></ng-content>
+  </div>
+  <div class="dropdown-icon">
+    @if (open()) {
+      <span class="material-symbols-outlined">
+      arrow_drop_up
+      </span>
+    } @else {
+      <span class="material-symbols-outlined">
+      arrow_drop_down
+      </span>
+    }
+  </div>
+</div>
+<div class="content-container" [style]="open() ? '' : 'display: none;'">
+<ng-content select=".content"></ng-content>
+</div>
