@@ -13,5 +13,37 @@
           </div>
         }
       </div>
+      <div class="category">
+        <h3>Mutations</h3>
+        @if (mutationsLoading) {
+          <mat-spinner></mat-spinner>
+        } @else {
+          <h4>Morphotypes</h4>
+          <div (click)="router.navigateByUrl('/mutation/' + mutation.id)" class="mutation category-entry" *ngFor="let mutation of mutationCat('morphotype')">
+            <img class="entry-img" [src]="mutation.imgUrl" />
+            <span class="entry-text">{{mutation.name}}</span>
+          </div>
+          <h4>Physical Mutations</h4>
+          <div (click)="router.navigateByUrl('/mutation/' + mutation.id)" class="mutation category-entry" *ngFor="let mutation of mutationCat('physical mutations')">
+            <img class="entry-img" [src]="mutation.imgUrl" />
+            <span class="entry-text">{{mutation.name}}</span>
+          </div>
+          <h4>Physical Defects</h4>
+          <div (click)="router.navigateByUrl('/mutation/' + mutation.id)" class="mutation category-entry" *ngFor="let mutation of mutationCat('physical defects')">
+            <img class="entry-img" [src]="mutation.imgUrl" />
+            <span class="entry-text">{{mutation.name}}</span>
+          </div>
+          <h4>Mental Mutations</h4>
+          <div (click)="router.navigateByUrl('/mutation/' + mutation.id)" class="mutation category-entry" *ngFor="let mutation of mutationCat('mental mutations')">
+            <img class="entry-img" [src]="mutation.imgUrl" />
+            <span class="entry-text">{{mutation.name}}</span>
+          </div>
+          <h4>Mental Defects</h4>
+          <div (click)="router.navigateByUrl('/mutation/' + mutation.id)" class="mutation category-entry" *ngFor="let mutation of mutationCat('mental defects')">
+            <img class="entry-img" [src]="mutation.imgUrl" />
+            <span class="entry-text">{{mutation.name}}</span>
+          </div>
+        }
+      </div>
     </div>
   </main>

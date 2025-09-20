@@ -1,1 +1,118 @@
-<app-header></app-header>
+<app-header title="Mutation" [subtitle]="mutation ? mutation.mutationCategory + ' | ' + mutation.name : ''"></app-header>
+
+  <main>
+    @if (!mutation) {
+      <mat-spinner></mat-spinner>
+    } @else {
+      <div class="feat-title-container">
+        <img class="feat-img" [src]="mutation.imgUrl" />
+        <h2>{{mutation.name}}</h2>
+      </div>
+      <p class="feat-desc">{{mutation.description + '.'}}</p>
+      <div class="details-container">
+        <div class="ability-container">
+          <h2>Abilities</h2>
+          @if (!mutation.abilities.length) {
+            <p class="no-entries">No abilities.</p>
+          } @else {
+          @for (ability of mutation.abilities; track ability) {
+            <div class="ability">
+              <div class="highlight-container">
+              <div class="summary-container">
+                @if (ability.useTime) {
+                  <span class="ability-duration">{{ability.useTime}}</span>
+                }
+                <span class="ability-summary">{{ability.summary + '.'}}</span>
+              </div>
+              <p class="ability-desc">{{ability.description}}</p>
+              <h4>Duration</h4>
+              @if (ability.duration) {
+                <span class="ability-duration">{{format.diceRoll(ability.duration)}}</span>
+              } @else if (ability.indefinite) {
+                <span class="no-entries">Indefinite</span>
+              } @else {
+                <span class="no-entries">N/A</span>
+              }
+              <h4>Conditions</h4>
+              @if (!ability.conditions.length) {
+                <p class="no-entries">No conditions.</p>
+              } @else {
+              <ul>
+                @for (condition of ability.conditions; track condition) {
+                  <li>{{condition}}</li>
+                }
+              </ul>
+              }
+              </div>
+              <div class="highlight-container">
+              <h3>Effects</h3>
+              @if (!ability.effects.length) {
+                <p class="no-entries">No effects.</p>
+              } @else {
+              <div class="effects-container">
+              @for (effect of ability.effects; track effect) {
+                <app-dropdown>
+                  <div class="title summary-container">
+                    <span class="ability-summary">{{effect.effect}}</span>
+                  </div>
+                  <div class="content">
+                    <h4>Duration</h4>
+                    <span class="ability-summary">{{format.diceRoll(effect.rounds) + (format.diceRoll(effect.rounds) === '1' ? ' Round' : ' Rounds')}}</span>
+                    <h4>Reasons</h4>
+                    @if (!effect.reasons.length) {
+                      <p class="no-entries">No reasons.</p>
+                    } @else {
+                    <ul>
+                      @for (reason of effect.reasons; track reason) {
+                        <li>{{reason}}</li>
+                      }
+                    </ul>
+                    }
+                    <h4>Conditions</h4>
+                    @if (!effect.conditions.length) {
+                      <p class="no-entries">No conditions.</p>
+                    } @else {
+                    <ul>
+                      @for (condition of effect.conditions; track condition) {
+                        <li>{{condition}}</li>
+                      }
+                    </ul>
+                    }
+                  </div>
+                </app-dropdown>
+              }
+              </div>
+              }
+            </div>
+            </div>
+          }
+          }
+        </div>
+        <div class="ability-container">
+          <h3>Buffs</h3>
+          @if (!mutation.buffs.length) {
+            <p class="no-entries">No buffs.</p>
+          } @else {
+          @for (buff of mutation.buffs; track buff) {
+            <div class="ability">
+              <div class="buff-container">
+                <span class="ability-duration">{{format.statOffset(buff.value)}}</span>
+                <span class="ability-summary">{{buff.stat}}</span>
+              </div>
+              <h4>Conditions</h4>
+              @if (!buff.conditions.length) {
+                <p class="no-entries">No conditions.</p>
+              } @else {
+              <ul>
+                @for (condition of buff.conditions; track condition) {
+                  <li>{{condition}}</li>
+                }
+              </ul>
+              }
+            </div>
+          }
+          }
+        </div>
+      </div>
+    }
+  </main>

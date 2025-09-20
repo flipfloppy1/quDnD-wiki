@@ -83,12 +83,14 @@ export interface Attack {
 
 export interface Ability {
   id: string;
-  duration: Duration;
+  useTime: Duration;
+  duration: DiceRoll | null;
   summary: string;
   description: string;
   conditions: string[];
   attacks: Attack[];
   effects: Effect[];
+  indefinite: boolean;
 }
 
 export interface FeatBuff {
@@ -105,4 +107,17 @@ export interface Feat {
   description: string;
   prereqs: string[];
   imgUrl: string;
+}
+
+export interface Mutation {
+  id: string;
+  name: string;
+  mutationCategory: string;
+  imgUrl: string;
+  description: string;
+  abilities: Ability[];
+  conditions: string[];
+  incompatibilities: string[];
+  buffs: FeatBuff[];
+  cost: number;
 }

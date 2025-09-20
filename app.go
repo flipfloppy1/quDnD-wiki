@@ -6,11 +6,14 @@ import (
 	"path/filepath"
 
 	"github.com/flipfloppy1/quDnD-wiki/feats"
+	"github.com/flipfloppy1/quDnD-wiki/mutations"
 )
 
 func main() {
 	http.HandleFunc("/api/feats/{featname}", feats.ServeFeats)
 	http.HandleFunc("/api/feats", feats.ServeFeats)
+	http.HandleFunc("/api/mutations/{mutationname}", mutations.ServeMutations)
+	http.HandleFunc("/api/mutations", mutations.ServeMutations)
 	httpfs := http.FileServer(http.Dir("dist/browser"))
 	http.HandleFunc("/", http.HandlerFunc(func(res http.ResponseWriter, req *http.Request) {
 		path := filepath.Join("dist", "browser", req.URL.Path)

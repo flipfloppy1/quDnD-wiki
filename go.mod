@@ -2,7 +2,7 @@ module github.com/flipfloppy1/quDnD-wiki
 
 go 1.25.1
 
-require github.com/flipfloppy1/quDnD v0.1.1-beta.0.20250918150408-a3860c4f5360
+require github.com/flipfloppy1/quDnD v0.1.1-beta.0.20250920162606-b1cdb8f32a7b
 
 require (
 	github.com/PuerkitoBio/goquery v1.10.2 // indirect

@@ -19,10 +19,20 @@
             <div class="ability">
               <div class="highlight-container">
               <div class="summary-container">
-                <span class="ability-duration">{{ability.duration}}</span>
+                @if (ability.useTime) {
+                  <span class="ability-duration">{{ability.useTime}}</span>
+                }
                 <span class="ability-summary">{{ability.summary + '.'}}</span>
               </div>
               <p class="ability-desc">{{ability.description}}</p>
+              <h4>Duration</h4>
+              @if (ability.duration) {
+                <span class="ability-duration">{{format.diceRoll(ability.duration)}}</span>
+              } @else if (ability.indefinite) {
+                <span class="no-entries">Indefinite</span>
+              } @else {
+                <span class="no-entries">N/A</span>
+              }
               <h4>Conditions</h4>
               @if (!ability.conditions.length) {
                 <p class="no-entries">No conditions.</p>
