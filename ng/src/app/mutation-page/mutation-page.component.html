@@ -1,14 +1,14 @@
-<app-header title="Mutation" [subtitle]="mutation ? mutation.mutationCategory + ' | ' + mutation.name : ''"></app-header>
+<app-header title="Mutation" [subtitle]="mutation ? format.capitalize(mutation.mutationCategory) + ' | ' + mutation.name : ''"></app-header>
 
   <main>
     @if (!mutation) {
       <mat-spinner></mat-spinner>
     } @else {
-      <div class="feat-title-container">
-        <img class="feat-img" [src]="mutation.imgUrl" />
+      <div class="skill-title-container">
+        <img class="skill-img" [src]="mutation.imgUrl" />
         <h2>{{mutation.name}}</h2>
       </div>
-      <p class="feat-desc">{{mutation.description + '.'}}</p>
+      <p class="skill-desc">{{mutation.description + '.'}}</p>
       <div class="details-container">
         <div class="ability-container">
           <h2>Abilities</h2>
@@ -111,6 +111,19 @@
               }
             </div>
           }
+          }
+        </div>
+        <div class="ability-container">
+          <h3>Incompatibilities</h3>
+          @if (!incompatibilities.length) {
+            <p class="no-entries">No incompatible mutations.</p>
+          } @else {
+            @for (incompat of incompatibilities; track incompat) {
+              <div (click)="router.navigateByUrl('/mutation/' + incompat.id)" class="mutation category-entry">
+                <img class="entry-img" [src]="incompat.imgUrl" />
+                <span class="entry-text">{{incompat.name}}</span>
+              </div>
+            }
           }
         </div>
       </div>

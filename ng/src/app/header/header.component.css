@@ -1,6 +1,7 @@
 .header-container {
   display: flex;
   position: fixed;
+  height: 70px;
   justify-content: space-between;
   width: 100%;
   padding-left: 40px;
@@ -25,4 +26,16 @@
   margin: 0;
   font-size: 16pt;
   min-height: 16pt;
+}
+
+.header-nav {
+  margin-right: 50px;
+  display: flex;
+  align-items: center;
+}
+
+img {
+  cursor: pointer;
+  height: 80px;
+  image-rendering: pixelated;
 }

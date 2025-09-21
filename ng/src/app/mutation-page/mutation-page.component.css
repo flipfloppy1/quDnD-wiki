@@ -1,19 +1,19 @@
-.feat-title-container {
+.skill-title-container {
   display: flex;
   gap: 30px;
   align-items: center;
 }
 
-.feat-img {
+.skill-img {
   height: 100px;
   image-rendering: pixelated;
 }
 
-.feat-title {
+.skill-title {
   font-size: 20px;
 }
 
-.feat-desc {
+.skill-desc {
   font-style: italic;
 }
 
@@ -70,4 +70,25 @@
   .details-container {
     flex-direction: column;
   }
+}
+
+.category-entry {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.entry-img {
+  height: 40px;
+  image-rendering: pixelated;
+}
+
+.entry-text {
+  font-size: 14pt;
+}
+
+.mutation {
+  margin-left: 20px;
 }

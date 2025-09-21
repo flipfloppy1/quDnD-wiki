@@ -1,15 +1,44 @@
 <app-header title="Home"></app-header>
 
   <main>
+    <div class="concepts-container">
+      <h3>Concepts</h3>
+      <div class="concepts">
+        <div class="concept concept-1" (click)="router.navigateByUrl('/concept/skills')">
+          <img class="concept-img" src="https://wiki.cavesofqud.com/images/0/07/So_Powerful_is_the_Charm_of_Words.png" />
+          <span class="concept-text">Skills</span>
+        </div>
+        <div class="concept concept-2" (click)="router.navigateByUrl('/concept/mutants')">
+          <img class="concept-img" src="https://wiki.cavesofqud.com/images/3/3b/Mutagenic_Mastery.png" />
+          <span class="concept-text">Mutants</span>
+        </div>
+        <div class="concept concept-3" (click)="router.navigateByUrl('/concept/callings')">
+          <img class="concept-img" src="https://wiki.cavesofqud.com/images/2/25/What%27s_Eating_the_Watervine%3F.png" />
+          <span class="concept-text">Callings</span>
+        </div>
+        <div class="concept concept-4" (click)="router.navigateByUrl('/concept/truekin')">
+          <img class="concept-img" src="https://wiki.cavesofqud.com/images/a/aa/You_Are_Becoming.png" />
+          <span class="concept-text">True Kin</span>
+        </div>
+        <div class="concept concept-5" (click)="router.navigateByUrl('/concept/castes')">
+          <img class="concept-img" src="https://wiki.cavesofqud.com/images/4/46/You_Became.png" />
+          <span class="concept-text">Castes</span>
+        </div>
+        <div class="concept concept-6" (click)="router.navigateByUrl('/concept/limbs')">
+          <img class="concept-img" src="https://wiki.cavesofqud.com/images/5/5c/Proteus.png" />
+          <span class="concept-text">Limbs</span>
+        </div>
+      </div>
+    </div>
     <div class="categories">
       <div class="category">
-        <h3>Feats</h3>
-        @if (featsLoading) {
+        <h3>Skills</h3>
+        @if (skillsLoading) {
           <mat-spinner></mat-spinner>
         } @else {
-          <div (click)="router.navigateByUrl('/feat/' + feat.id)" class="category-entry" *ngFor="let feat of feats">
-            <img class="entry-img" [src]="feat.imgUrl" />
-            <span class="entry-text">{{feat.name}}</span>
+          <div (click)="router.navigateByUrl('/skill/' + skill.id)" class="category-entry" *ngFor="let skill of skills">
+            <img class="entry-img" [src]="skill.imgUrl" />
+            <span class="entry-text">{{skill.name}}</span>
           </div>
         }
       </div>

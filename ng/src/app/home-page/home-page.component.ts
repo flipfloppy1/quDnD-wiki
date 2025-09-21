@@ -4,7 +4,7 @@ import { HttpClient } from "@angular/common/http";
 import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 import { Router } from "@angular/router";
 import { CommonModule } from "@angular/common";
-import { Feat, Mutation } from "../app.definitions";
+import { Skill, Mutation } from "../app.definitions";
 
 @Component({
   selector: "app-home-page",
@@ -13,25 +13,25 @@ import { Feat, Mutation } from "../app.definitions";
   styleUrl: "./home-page.component.css",
 })
 export class HomePageComponent {
-  featsLoading: boolean = true;
-  featsError = "";
-  feats: Feat[] = [];
+  skillsLoading: boolean = true;
+  skillsError = "";
+  skills: Skill[] = [];
   mutationsLoading: boolean = true;
   mutationsError = "";
   mutations: Mutation[] = [];
   router = inject(Router);
   http = inject(HttpClient);
 
-  getFeats() {
-    this.featsLoading = true;
-    this.http.get("/api/feats").subscribe({
+  getSkills() {
+    this.skillsLoading = true;
+    this.http.get("/api/skills").subscribe({
       next: (resp: any) => {
-        this.feats = resp.feats;
-        this.featsLoading = false;
+        this.skills = resp.skills;
+        this.skillsLoading = false;
       },
       error: (resp: any) => {
-        this.featsError = resp.error.error;
-        this.featsLoading = false;
+        this.skillsError = resp.error.error;
+        this.skillsLoading = false;
       },
     });
   }
@@ -57,7 +57,7 @@ export class HomePageComponent {
   }
 
   ngOnInit() {
-    this.getFeats();
+    this.getSkills();
     this.getMutations();
   }
 }

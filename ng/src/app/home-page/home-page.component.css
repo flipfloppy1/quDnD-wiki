@@ -14,6 +14,8 @@
   display: flex;
   gap: 10px;
   align-items: center;
+  cursor: pointer;
+  user-select: none;
 }
 
 .entry-img {
@@ -25,12 +27,98 @@
   font-size: 14pt;
 }
 
+.mutation {
+  margin-left: 20px;
+}
+
+.concepts {
+  display: grid;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.concept {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  width: 150px;
+  cursor: pointer;
+}
+
+.concept-1 {
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.concept-2 {
+  grid-row: 1;
+  grid-column: 2;
+}
+
+.concept-3 {
+  grid-row: 1;
+  grid-column: 3;
+}
+
+.concept-4 {
+  grid-row: 2;
+  grid-column: 1;
+}
+
+.concept-5 {
+  grid-row: 2;
+  grid-column: 2;
+}
+
+.concept-6 {
+  grid-row: 2;
+  grid-column: 3;
+}
+
+.concept-img {
+  height: 150px;
+  width: 150px;
+  image-rendering: pixelated;
+}
+
+.concept-text {
+  text-align: center;
+  font-weight: bold;
+}
+
+.concepts-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 @media screen and (width <= 900px) {
   .categories {
     flex-direction: column;
   }
-}
-
-.mutation {
-  margin-left: 20px;
+  .concept-1 {
+    grid-row: 1;
+    grid-column: 1;
+  }
+  .concept-2 {
+    grid-row: 1;
+    grid-column: 2;
+  }
+  .concept-3 {
+    grid-row: 2;
+    grid-column: 1;
+  }
+  .concept-4 {
+    grid-row: 2;
+    grid-column: 2;
+  }
+  .concept-5 {
+    grid-row: 3;
+    grid-column: 1;
+  }
+  .concept-6 {
+    grid-row: 3;
+    grid-column: 2;
+  }
 }

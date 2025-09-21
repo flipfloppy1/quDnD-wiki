@@ -6,17 +6,19 @@ html {
 
 html,
 body {
-  height: 100vh;
-}
-body {
   background: var(--mat-sys-surface);
   color: var(--mat-sys-on-surface);
   margin: 0;
 }
 
 main {
+  position: absolute;
+  top: 110px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
   padding: 20px;
-  padding-top: 120px;
+  overflow: auto;
 }
 
 .material-symbols-outlined {

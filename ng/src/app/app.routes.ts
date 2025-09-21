@@ -1,8 +1,9 @@
 import { Routes } from "@angular/router";
 import { HomePageComponent } from "./home-page/home-page.component";
-import { FeatPageComponent } from "./feat-page/feat-page.component";
+import { SkillPageComponent } from "./skill-page/skill-page.component";
 import { MutationPageComponent } from "./mutation-page/mutation-page.component";
 import { CyberneticPageComponent } from "./cybernetic-page/cybernetic-page.component";
+import { ConceptPageComponent } from "./concept-page/concept-page.component";
 
 export const routes: Routes = [
   {
@@ -11,9 +12,9 @@ export const routes: Routes = [
     title: "quDnD Wiki | Home",
   },
   {
-    path: "feat/:id",
-    component: FeatPageComponent,
-    title: "quDnD Wiki | Feats",
+    path: "skill/:id",
+    component: SkillPageComponent,
+    title: "quDnD Wiki | Skills",
   },
   {
     path: "mutation/:id",
@@ -24,5 +25,10 @@ export const routes: Routes = [
     path: "cybernetic/:id",
     component: CyberneticPageComponent,
     title: "quDnD Wiki | Cybernetics",
+  },
+  {
+    path: "concept/:id",
+    component: ConceptPageComponent,
+    title: "quDnD Wiki | Concepts",
   },
 ];

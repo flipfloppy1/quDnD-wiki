@@ -5,13 +5,13 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/flipfloppy1/quDnD-wiki/feats"
 	"github.com/flipfloppy1/quDnD-wiki/mutations"
+	"github.com/flipfloppy1/quDnD-wiki/skills"
 )
 
 func main() {
-	http.HandleFunc("/api/feats/{featname}", feats.ServeFeats)
-	http.HandleFunc("/api/feats", feats.ServeFeats)
+	http.HandleFunc("/api/skills/{skillname}", skills.ServeSkills)
+	http.HandleFunc("/api/skills", skills.ServeSkills)
 	http.HandleFunc("/api/mutations/{mutationname}", mutations.ServeMutations)
 	http.HandleFunc("/api/mutations", mutations.ServeMutations)
 	httpfs := http.FileServer(http.Dir("dist/browser"))

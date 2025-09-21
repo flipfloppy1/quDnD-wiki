@@ -1,0 +1,63 @@
+<app-header title="Concept" [subtitle]="format.capitalize(this.page)"></app-header>
+
+<main>
+  @switch (page) {
+    @case ('skills') {
+    <div class="concept-container">
+      <div class="concept-text">
+        <b>Summary</b>
+        <p>
+          In Qud, skills are a primary source of build diversity and utility for
+          both mutants and true kin. Their closest DnD equivalent is Feats.
+        </p>
+        <p>
+          Skills range from techniques used in combat, to mechanics
+          like tinkering, cooking, butchering and gathering.
+        </p>
+        <b>Skill Points</b>
+        <p>
+          Skills can be purchased with Skill Points, which are granted on level-up.
+          <a (click)="nav('/concept/true kin')">True Kin</a> gain a base 3 Skill Points
+          per level, whilst <a (click)="nav('/concept/mutants')">Mutants</a> gain 2. If your
+          intelligence modifier is two or greater, your number of Skill Points per
+          level is increased by half your INT mod, rounded down, retroactively
+          applied to any previous levels too.
+        </p>
+        <p>
+          For example, if a level 5 True Kin with an Intelligence of 13 (INT Mod +1) were
+          to invest an attribute point into Intelligence, they would immediately
+          gain 5 Skill Points from the five levels prior. Because of the INT bonus,
+          on their next level up they would receive 4 instead of 3 Skill Points.
+        </p>
+      </div>
+      <div class="concept-appendix">
+        <b>Skill Points per level</b>
+        <table>
+          <tr><th>INT</th><th>Mutant</th><th>True Kin</th></tr>
+          <tr><td>1-13</td><td>2</td><td>3</td></tr>
+          <tr><td>14-17</td><td>3</td><td>4</td></tr>
+          <tr><td>18-21</td><td>4</td><td>5</td></tr>
+          <tr><td>22-25</td><td>5</td><td>6</td></tr>
+          <tr><td>26-29</td><td>6</td><td>7</td></tr>
+          <tr><td>30</td><td>7</td><td>8</td></tr>
+        </table>
+      </div>
+    </div>
+    }
+    @case ('mutants') {
+
+    }
+    @case ('callings') {
+
+    }
+    @case ('true kin') {
+
+    }
+    @case ('castes') {
+
+    }
+    @case ('limbs') {
+
+    }
+  }
+</main>

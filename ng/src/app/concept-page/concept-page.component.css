@@ -1,0 +1,26 @@
+.concept-container {
+  display: flex;
+  gap: 100px;
+}
+
+.concept-text {
+  max-width: 800px;
+  text-align: justify;
+}
+
+a {
+  color: lightblue;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+table {
+  border: 1px solid white;
+  border-collapse: collapse;
+}
+
+td,
+th {
+  padding: 5px;
+  border: 1px solid white;
+}

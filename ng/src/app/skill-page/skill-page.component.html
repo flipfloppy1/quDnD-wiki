@@ -1,21 +1,21 @@
-<app-header title="Feat" [subtitle]="feat?.name ?? ''"></app-header>
+<app-header title="Skill" [subtitle]="skill?.name ?? ''"></app-header>
 
   <main>
-    @if (!feat) {
+    @if (!skill) {
       <mat-spinner></mat-spinner>
     } @else {
-      <div class="feat-title-container">
-        <img class="feat-img" [src]="feat.imgUrl" />
-        <h2>{{feat.name}}</h2>
+      <div class="skill-title-container">
+        <img class="skill-img" [src]="skill.imgUrl" />
+        <h2>{{skill.name}}</h2>
       </div>
-      <p class="feat-desc">{{feat.description + '.'}}</p>
+      <p class="skill-desc">{{skill.description + '.'}}</p>
       <div class="details-container">
         <div class="ability-container">
           <h2>Abilities</h2>
-          @if (!feat.abilities.length) {
+          @if (!skill.abilities.length) {
             <p class="no-entries">No abilities.</p>
           } @else {
-          @for (ability of feat.abilities; track ability) {
+          @for (ability of skill.abilities; track ability) {
             <div class="ability">
               <div class="highlight-container">
               <div class="summary-container">
@@ -90,10 +90,10 @@
         </div>
         <div class="ability-container">
           <h3>Buffs</h3>
-          @if (!feat.buffs.length) {
+          @if (!skill.buffs.length) {
             <p class="no-entries">No buffs.</p>
           } @else {
-          @for (buff of feat.buffs; track buff) {
+          @for (buff of skill.buffs; track buff) {
             <div class="ability">
               <div class="buff-container">
                 <span class="ability-duration">{{format.statOffset(buff.value)}}</span>

@@ -1,5 +1,5 @@
-import { Component } from "@angular/core";
-import { RouterOutlet } from "@angular/router";
+import { Component, inject } from "@angular/core";
+import { Router, RouterOutlet } from "@angular/router";
 
 @Component({
   selector: "app-root",
@@ -9,4 +9,12 @@ import { RouterOutlet } from "@angular/router";
 })
 export class AppComponent {
   title = "quDnD-wiki";
+  router = inject(Router);
+  ngOnInit() {
+    document.addEventListener("keydown", (event: KeyboardEvent) => {
+      if (event.key === "Escape" && this.router.url !== "/") {
+        this.router.navigateByUrl("/");
+      }
+    });
+  }
 }

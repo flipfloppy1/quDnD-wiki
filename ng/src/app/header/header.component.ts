@@ -1,4 +1,5 @@
-import { Component, input } from "@angular/core";
+import { Component, inject, input } from "@angular/core";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-header",
@@ -9,4 +10,9 @@ import { Component, input } from "@angular/core";
 export class HeaderComponent {
   title = input("");
   subtitle = input("");
+  router = inject(Router);
+
+  navigateHome() {
+    this.router.navigateByUrl("/");
+  }
 }

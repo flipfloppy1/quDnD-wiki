@@ -1,4 +1,4 @@
-package feats
+package skills
 
 import (
 	"encoding/json"
@@ -11,30 +11,30 @@ import (
 	"github.com/flipfloppy1/quDnD/src/statblock"
 )
 
-func ServeFeats(res http.ResponseWriter, req *http.Request) {
-	feat := req.PathValue("featname")
-	if feat == "" {
-		feats := slices.Collect(maps.Values(statblock.Feats))
-		slices.SortFunc(feats, func(a statblock.Feat, b statblock.Feat) int {
+func ServeSkills(res http.ResponseWriter, req *http.Request) {
+	skill := req.PathValue("skillname")
+	if skill == "" {
+		skills := slices.Collect(maps.Values(statblock.Feats))
+		slices.SortFunc(skills, func(a statblock.Feat, b statblock.Feat) int {
 			return strings.Compare(a.Name, b.Name)
 		})
 
 		bytes, _ := json.Marshal(struct {
-			Feats []statblock.Feat `json:"feats"`
-		}{feats})
+			Skills []statblock.Feat `json:"skills"`
+		}{skills})
 		res.Header().Add("Content-Type", "application/json")
 		res.WriteHeader(200)
 		res.Write(bytes)
 		return
 	}
 
-	featData, ok := statblock.Feats[feat]
+	skillData, ok := statblock.Feats[skill]
 	if !ok {
-		utils.HttpReportError(res, "Feat not found", 404)
+		utils.HttpReportError(res, "Skill not found", 404)
 		return
 	}
 
-	bytes, _ := json.Marshal(featData)
+	bytes, _ := json.Marshal(skillData)
 	res.Header().Add("Content-Type", "application/json")
 	res.WriteHeader(200)
 	res.Write(bytes)

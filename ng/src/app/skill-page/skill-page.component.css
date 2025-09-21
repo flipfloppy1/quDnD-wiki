@@ -1,19 +1,19 @@
-.feat-title-container {
+.skill-title-container {
   display: flex;
   gap: 30px;
   align-items: center;
 }
 
-.feat-img {
+.skill-img {
   height: 100px;
   image-rendering: pixelated;
 }
 
-.feat-title {
+.skill-title {
   font-size: 20px;
 }
 
-.feat-desc {
+.skill-desc {
   font-style: italic;
 }
 

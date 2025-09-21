@@ -20,6 +20,16 @@ export class FormatterService {
     return "+" + stat;
   }
 
+  capitalize(input: string) {
+    let strs = input.split(" ");
+    let output = "";
+    for (let i = 0; i < strs.length; i++) {
+      output += strs[i][0].toUpperCase() + strs[i].substring(1);
+      if (i < strs.length - 1) output += " ";
+    }
+    return output;
+  }
+
   diceRoll(dice: DiceRoll): string {
     let formatted = "";
     for (let i = 0; i < dice.dice.length; i++) {

@@ -93,16 +93,16 @@ export interface Ability {
   indefinite: boolean;
 }
 
-export interface FeatBuff {
+export interface SkillBuff {
   stat: Stat;
   value: string;
   conditions: string[];
 }
 
-export interface Feat {
+export interface Skill {
   id: string;
   name: string;
-  buffs: FeatBuff[];
+  buffs: SkillBuff[];
   abilities: Ability[];
   description: string;
   prereqs: string[];
@@ -118,6 +118,6 @@ export interface Mutation {
   abilities: Ability[];
   conditions: string[];
   incompatibilities: string[];
-  buffs: FeatBuff[];
+  buffs: SkillBuff[];
   cost: number;
 }

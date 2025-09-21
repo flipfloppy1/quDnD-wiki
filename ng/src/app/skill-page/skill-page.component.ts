@@ -9,41 +9,41 @@ import { DropdownComponent } from "../dropdown/dropdown.component";
 import * as defs from "../app.definitions";
 
 @Component({
-  selector: "app-feat-page",
+  selector: "app-skill-page",
   imports: [DropdownComponent, HeaderComponent, MatProgressSpinnerModule],
-  templateUrl: "./feat-page.component.html",
-  styleUrl: "./feat-page.component.css",
+  templateUrl: "./skill-page.component.html",
+  styleUrl: "./skill-page.component.css",
 })
-export class FeatPageComponent {
-  featName = "";
-  feat?: defs.Feat;
+export class SkillPageComponent {
+  skillName = "";
+  skill?: defs.Skill;
   route = inject(ActivatedRoute);
   http = inject(HttpClient);
   snackbar = inject(MatSnackBar);
   format = inject(FormatterService);
-  featLoading = true;
+  skillLoading = true;
 
-  loadFeat(featId: string) {
-    this.featLoading = true;
-    this.http.get("/api/feats/" + encodeURIComponent(featId)).subscribe({
+  loadSkill(skillId: string) {
+    this.skillLoading = true;
+    this.http.get("/api/skills/" + encodeURIComponent(skillId)).subscribe({
       next: (res: any) => {
-        this.feat = res;
-        this.featLoading = false;
+        this.skill = res;
+        this.skillLoading = false;
       },
       error: (res: any) => {
         this.snackbar.open(res.error.error, "Dismiss");
-        this.featLoading = false;
+        this.skillLoading = false;
       },
     });
   }
 
   ngOnInit() {
     this.route.paramMap.subscribe((map) => {
-      let featId = map.get("id");
-      if (!featId) {
-        this.snackbar.open("feat ID not found", "Dismiss");
+      let skillId = map.get("id");
+      if (!skillId) {
+        this.snackbar.open("skill ID not found", "Dismiss");
       } else {
-        this.loadFeat(featId);
+        this.loadSkill(skillId);
       }
     });
   }
