@@ -18,7 +18,8 @@ main {
   right: 0px;
   bottom: 0px;
   padding: 20px;
-  overflow: auto;
+  overflow-y: scroll;
+  scrollbar-color: rgb(80, 100, 120) rgb(40, 60, 80);
 }
 
 .material-symbols-outlined {

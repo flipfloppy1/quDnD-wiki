@@ -1,6 +1,6 @@
 .concept-container {
   display: flex;
-  gap: 100px;
+  gap: 40px;
 }
 
 .concept-text {
@@ -23,4 +23,13 @@ td,
 th {
   padding: 5px;
   border: 1px solid white;
+}
+
+@media screen and (width <= 900px) {
+  .concept-container {
+    gap: 15px;
+  }
+  .concept-text {
+    text-align: left;
+  }
 }
