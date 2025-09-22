@@ -8,7 +8,8 @@
   text-align: justify;
 }
 
-a {
+a,
+.link {
   color: lightblue;
   text-decoration: underline;
   cursor: pointer;
@@ -17,6 +18,16 @@ a {
 table {
   border: 1px solid white;
   border-collapse: collapse;
+}
+
+.mut-link {
+  cursor: pointer;
+}
+
+.icon-img {
+  margin-bottom: -8px;
+  height: 30px;
+  image-rendering: pixelated;
 }
 
 td,

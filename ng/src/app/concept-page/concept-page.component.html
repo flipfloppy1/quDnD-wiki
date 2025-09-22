@@ -20,14 +20,21 @@
           <a (click)="nav('/concept/true kin')">True Kin</a> gain a base 3 Skill Points
           per level, whilst <a (click)="nav('/concept/mutants')">Mutants</a> gain 2. If your
           intelligence modifier is two or greater, your number of Skill Points per
-          level is increased by half your INT mod, rounded down, retroactively
-          applied to any previous levels too.
+          level is increased by half your Intelligence modifier, rounded down, retroactively
+          applied to any previous levels too. This ensures that if you gain more intelligence
+          later, you don't miss out on the Skill Points you would've gained from having that
+          intelligence earlier.
         </p>
         <p>
           For example, if a level 5 True Kin with an Intelligence of 13 (INT Mod +1) were
           to invest an attribute point into Intelligence, they would immediately
           gain 5 Skill Points from the five levels prior. Because of the INT bonus,
           on their next level up they would receive 4 instead of 3 Skill Points.
+        </p>
+        <b>Learning From NPCs</b>
+        <p>
+          Certain NPCs can teach skills when you water ritual with them, for a reputation cost
+          equal to the skill points required to learn it.
         </p>
       </div>
       <div class="concept-appendix">
@@ -45,19 +52,188 @@
     </div>
     }
     @case ('mutants') {
-
+    <div class="concept-container">
+      <div class="concept-text">
+        <b>Summary</b>
+        <p>
+          Mutant, or mutated human, is one archetype available at character creation, the
+          other option being <a (click)="nav('/concept/true kin')">True Kin</a>.
+        </p>
+        <p>
+          Mutants use mutations as their primary means of build diversity, and don't have
+          access to <a (click)="nav('/concept/cybernetics')">cybernetics</a>. Mutations are
+          purchased and upgraded using mutation points (MP). The rank of a mutation is
+          sometimes referred to as MUT.
+        </p>
+        <b>Mutations and Mutation Points</b>
+        <p>
+          At character creation, mutants get 12 MP to spend on mutations, which don't carry
+          over to play. Mutants gain 1 MP on every level up. Some mutations have a greater
+          initial cost than others, and most mutations can be upgraded after they are acquired to
+          enhance their effects, with the exception of 1 MP mutations.
+        </p>
+        <p>
+          Mutations are split into five categories: morphotypes, physical mutations, physical defects,
+          mental mutations and mental defects. Taking mental or physical defects at character creation
+          gives you more mutation points to spend on other mutations.
+        </p>
+        <p>
+          At any point during a campaign, a mutant can expend 4 mutation points to gain
+          a new mutation. The player gets to choose from 1 of 3 randomly rolled mutations.
+        </p>
+        <b>
+          Morphotypes
+        </b>
+        <p>
+          There are three mutations in the morphotypes category, which can only be selected at character creation.
+        </p>
+        <p>
+          <span (click)="nav('/mutation/chimera')" class="mut-link">
+            <img class="icon-img" src="https://wiki.cavesofqud.com/images/a/a9/Chimera_mutation.png" />
+            <a>Chimera</a>
+          </span>
+          is a morphotype that causes the player to only manifest physical mutations. It is incompatible with any
+          mental mutations at character creation, and the mutations the player can select from when manifesting
+          a new mutation will be restricted to physical mutations during the campaign. Additionally, whenever the
+          player manifests a new mutation, one of the three choices will allow them to grow a randomly placed limb.
+        </p>
+        <p>
+          <span (click)="nav('/mutation/esper')" class="mut-link">
+            <img class="icon-img" src="https://wiki.cavesofqud.com/images/0/01/Esper_mutation.png" />
+            <a>Esper</a>
+          </span>
+          is a morphotype that causes the player to only manifest mental mutations. Whilst mental mutations are very
+          powerful, their power is often coveted by other, mysterious beings... A player's Glimmer is the sum of
+          the mutation ranks of all their mental mutations. Who knows what could happen if they shine too bright?
+        </p>
+        <p>
+          <span (click)="nav('/mutation/unstable genome')" class="mut-link">
+            <img class="icon-img" src="https://wiki.cavesofqud.com/images/7/7a/Unstable_genome_mutation.png" />
+            <a>Unstable Genome</a>
+          </span>
+          is the only mutation that can be bought more than once. Each time you buy it,
+          you get one extra mutation that has a 1/3 chance to manifest on level up (5 or 6 on a d6), in the
+          same way that buying a random mutation would. The player's stacks of
+          <span (click)="nav('/mutation/unstable genome')" class="mut-link">
+            <img class="icon-img" src="https://wiki.cavesofqud.com/images/7/7a/Unstable_genome_mutation.png" />
+            <a>Unstable Genome</a>
+          </span>
+          decrease by one every time they manifest a new mutation this way, until there are no more stacks left.
+          This morphotype has a chance to give you access to 4 or 5 point mutations that you may not have otherwise
+          been able to buy, and also allows you to grow more limbs as a
+          <span (click)="nav('/mutation/chimera')" class="mut-link">
+            <img class="icon-img" src="https://wiki.cavesofqud.com/images/a/a9/Chimera_mutation.png" />
+            <a>Chimera</a>
+          </span>.
+        </p>
+        <b>Other Mutations</b>
+        <p>
+          For detailed info on other mutations, including their cost and incompatibilities, click on any mutation
+          in the list of mutations on the <a (click)="nav('/')">Home Page</a>.
+        </p>
+      </div>
+      <div class="concept-appendix">
+      </div>
+    </div>
     }
     @case ('callings') {
-
+    <div class="concept-container">
+      <div class="concept-text">
+      </div>
+      <div class="concept-appendix">
+      </div>
+    </div>
     }
     @case ('true kin') {
-
+    <div class="concept-container">
+      <div class="concept-text">
+      </div>
+      <div class="concept-appendix">
+      </div>
+    </div>
     }
     @case ('castes') {
-
+    <div class="concept-container">
+      <div class="concept-text">
+      </div>
+      <div class="concept-appendix">
+      </div>
+    </div>
     }
     @case ('limbs') {
-
+    <div class="concept-container">
+      <div class="concept-text">
+      </div>
+      <div class="concept-appendix">
+      </div>
+    </div>
+    }
+    @case ('reputation') {
+    <div class="concept-container">
+      <div class="concept-text">
+        <b>Summary</b>
+        <p>
+          As the party explores the vast jungles of Qud, many different factions start to
+          become invested in them, for better or for worse. There are a number of factors
+          that influence reputation, and a number of things that reputation influences.
+        </p>
+        <b>The Scale</b>
+        <p>
+          Reputation ranges from -24 to 24. With a reputation of -24 or lower towards a faction, even
+          passive members of the faction will be hostile towards the party, whereas with a reputation
+          of 24 or higher, even aggressive members of the faction will be friendly towards the party.
+          Friendly NPCs will notice when allies are attacked in an area, and support them if they are
+          able to.
+        </p>
+        <p>
+          Some factions have sacred spaces, where they may act differently if you encroach upon them.
+          If the party enters the sacred space of a faction without being at least liked by the faction,
+          the inhabitants will be hostile towards the party.
+        </p>
+        <b>Water Ritual</b>
+        <p>
+          The water ritual is a universally recognised sacred rite of Qud, where due to its scarcity,
+          fresh water is a precious commodity. The water ritual can be opened with a non-hostile Legendary NPC.
+          A representative of the party will state "Your thirst is mine, my water is yours", offering
+          a dram of fresh water, or another liquid the NPC prefers (such as oil for some robots).
+        </p>
+        <p>
+          Killing an NPC that the party is water-bonded with breaks the sacred covenant, and reduces the party's
+          reputation in every faction by 4 + 1d4 points.
+        </p>
+        <b>Legendary NPCs</b>
+        <p>
+          In Qud, Legendary NPCs exist that are representatives of their faction or tribe.
+          For each Legendary NPC, there may be a number of factions that like, love, dislike
+          or hate the Legendary NPC.
+        </p>
+        <p>
+          Slaying a Legendary NPC will increase your reputation with factions that hate or dislike them,
+          and decrease your reputation with their faction and factions that like or love them. Performing the
+          water ritual with them will do the opposite.
+        </p>
+      </div>
+      <div class="concept-appendix">
+        <b>Reputation Scale</b>
+        <table>
+          <tr><th>Status</th><th>Reputation Level</th></tr>
+          <tr><td>-24</td><td>Hated</td></tr>
+          <tr><td>-12</td><td>Disliked</td></tr>
+          <tr><td>0</td><td>Neutral</td></tr>
+          <tr><td>12</td><td>Liked</td></tr>
+          <tr><td>24</td><td>Loved</td></tr>
+        </table>
+        <br>
+        <b>Reputation With Legendary NPCs</b>
+        <table>
+          <tr><th>Faction Status</th><th>Reputation On Kill</th><th>Reputation On Water Ritual</th></tr>
+          <tr><td>Hates</td><td>+4</td><td>-4</td></tr>
+          <tr><td>Dislikes</td><td>+2</td><td>-2</td></tr>
+          <tr><td>Likes</td><td>-2</td><td>+2</td></tr>
+          <tr><td>Loves</td><td>-4</td><td>+4</td></tr>
+        </table>
+      </div>
+    </div>
     }
   }
 </main>
