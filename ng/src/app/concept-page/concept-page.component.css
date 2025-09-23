@@ -30,6 +30,18 @@ table {
   image-rendering: pixelated;
 }
 
+.wiki-page {
+  width: 800px;
+  height: 800px;
+  border: none;
+  scrollbar-width: 0;
+}
+
+.placeholder {
+  font-style: italic;
+  color: rgb(200, 250, 230);
+}
+
 td,
 th {
   padding: 5px;
@@ -42,5 +54,8 @@ th {
   }
   .concept-text {
     text-align: left;
+  }
+  .wiki-page {
+    width: 500px;
   }
 }

@@ -1,6 +1,16 @@
 <app-header title="Home"></app-header>
 
   <main>
+    <div class="main-container">
+    <div class="concepts-container">
+      <h3>Guides</h3>
+      <div class="concepts">
+        <div class="concept concept-1" (click)="router.navigateByUrl('/concept/general knowledge')">
+          <img class="concept-img" src="https://wiki.cavesofqud.com/images/a/a7/Become_as_Gods.png" />
+          <span class="concept-text">General Knowledge</span>
+        </div>
+      </div>
+    </div>
     <div class="concepts-container">
       <h3>Concepts</h3>
       <div class="concepts">
@@ -16,7 +26,7 @@
           <img class="concept-img" src="https://wiki.cavesofqud.com/images/2/25/What%27s_Eating_the_Watervine%3F.png" />
           <span class="concept-text">Callings</span>
         </div>
-        <div class="concept concept-4" (click)="router.navigateByUrl('/concept/truekin')">
+        <div class="concept concept-4" (click)="router.navigateByUrl('/concept/true kin')">
           <img class="concept-img" src="https://wiki.cavesofqud.com/images/a/aa/You_Are_Becoming.png" />
           <span class="concept-text">True Kin</span>
         </div>
@@ -78,5 +88,6 @@
           </div>
         }
       </div>
+    </div>
     </div>
   </main>

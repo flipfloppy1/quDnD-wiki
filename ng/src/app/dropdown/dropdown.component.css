@@ -9,8 +9,12 @@
 }
 
 .content-container {
-  background: linear-gradient(345deg, rgb(20, 40, 60), rgb(40, 60, 80));
+  background-color: rgb(10, 20, 30);
   border-radius: 10px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border: 1px grey solid;
+  border-top: 0px;
   padding: 10px;
 }
 

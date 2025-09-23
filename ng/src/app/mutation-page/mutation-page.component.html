@@ -15,6 +15,7 @@
           @if (!mutation.abilities.length) {
             <p class="no-entries">No abilities.</p>
           } @else {
+          <div class="abilities">
           @for (ability of mutation.abilities; track ability) {
             <div class="ability">
               <div class="highlight-container">
@@ -43,8 +44,6 @@
                 }
               </ul>
               }
-              </div>
-              <div class="highlight-container">
               <h3>Effects</h3>
               @if (!ability.effects.length) {
                 <p class="no-entries">No effects.</p>
@@ -83,9 +82,10 @@
               }
               </div>
               }
-            </div>
+              </div>
             </div>
           }
+          </div>
           }
         </div>
         <div class="ability-container">

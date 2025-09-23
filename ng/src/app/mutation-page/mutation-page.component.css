@@ -37,6 +37,12 @@
   color: rgb(200, 250, 230);
 }
 
+.abilities {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
 .ability {
   display: flex;
   flex-direction: column;
