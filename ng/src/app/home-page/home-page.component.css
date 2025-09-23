@@ -48,7 +48,8 @@
 
 .main-container {
   display: flex;
-  gap: 100px;
+  gap: 80px;
+  margin-left: 40px;
 }
 .concept-img {
   height: 150px;
@@ -103,5 +104,6 @@
   .main-container {
     flex-direction: column;
     gap: 0px;
+    margin-left: 0px;
   }
 }
