@@ -2,8 +2,8 @@ github.com/PuerkitoBio/goquery v1.10.2 h1:7fh2BdHcG6VFZsK7toXBT/Bh1z5Wmy8Q9MV9Hq
 github.com/PuerkitoBio/goquery v1.10.2/go.mod h1:0guWGjcLu9AYC7C1GHnpysHy056u9aEkUHwhdnePMCU=
 github.com/andybalholm/cascadia v1.3.3 h1:AG2YHrzJIm4BZ19iwJ/DAua6Btl3IwJX+VI4kktS1LM=
 github.com/andybalholm/cascadia v1.3.3/go.mod h1:xNd9bqTn98Ln4DwST8/nG+H0yuB8Hmgu1YHNnWw0GeA=
-github.com/flipfloppy1/quDnD v0.1.1-beta.0.20250920162606-b1cdb8f32a7b h1:cG1prkCR40bQPnyyIkurHHq8UVRw7uVZt4QdRPfEA54=
-github.com/flipfloppy1/quDnD v0.1.1-beta.0.20250920162606-b1cdb8f32a7b/go.mod h1:7Q2rwQyi7wfWojoxUhFFoonGGEVLhoAxdHcQQ1qOM/c=
+github.com/flipfloppy1/quDnD v0.1.1-beta.0.20250924131605-742a5c9c5bfe h1:ekcL9TEbcVUH2kWsGYd+CuorqgcxXZIMICMJKHtSEuw=
+github.com/flipfloppy1/quDnD v0.1.1-beta.0.20250924131605-742a5c9c5bfe/go.mod h1:7Q2rwQyi7wfWojoxUhFFoonGGEVLhoAxdHcQQ1qOM/c=
 github.com/google/go-cmp v0.6.0/go.mod h1:17dUlkBOakJ0+DkrSSNjCkIjxS6bF9zb3elmeNGIjoY=
 github.com/lithammer/fuzzysearch v1.1.8 h1:/HIuJnjHuXS8bKaiTMeeDlW2/AyIWk2brx1V8LFgLN4=
 github.com/lithammer/fuzzysearch v1.1.8/go.mod h1:IdqeyBClc3FFqSzYq/MXESsS4S0FsZ5ajtkr5xPLts4=
