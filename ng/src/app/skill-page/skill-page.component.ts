@@ -6,6 +6,7 @@ import { MatSnackBar } from "@angular/material/snack-bar";
 import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 import { FormatterService } from "../services/formatter.service";
 import { DropdownComponent } from "../dropdown/dropdown.component";
+import { Title } from "@angular/platform-browser";
 import * as defs from "../app.definitions";
 
 @Component({
@@ -19,6 +20,7 @@ export class SkillPageComponent {
   skill?: defs.Skill;
   route = inject(ActivatedRoute);
   http = inject(HttpClient);
+  title = inject(Title);
   snackbar = inject(MatSnackBar);
   format = inject(FormatterService);
   skillLoading = true;
@@ -28,6 +30,7 @@ export class SkillPageComponent {
     this.http.get("/api/skills/" + encodeURIComponent(skillId)).subscribe({
       next: (res: any) => {
         this.skill = res;
+        this.title.setTitle("quDnD | " + res.name);
         this.skillLoading = false;
       },
       error: (res: any) => {

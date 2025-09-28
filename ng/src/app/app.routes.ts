@@ -9,26 +9,22 @@ export const routes: Routes = [
   {
     path: "",
     component: HomePageComponent,
-    title: "quDnD Wiki | Home",
+    title: "quDnD | Home",
   },
   {
     path: "skill/:id",
     component: SkillPageComponent,
-    title: "quDnD Wiki | Skills",
   },
   {
     path: "mutation/:id",
     component: MutationPageComponent,
-    title: "quDnD Wiki | Mutations",
   },
   {
     path: "cybernetic/:id",
     component: CyberneticPageComponent,
-    title: "quDnD Wiki | Cybernetics",
   },
   {
     path: "concept/:id",
     component: ConceptPageComponent,
-    title: "quDnD Wiki | Concepts",
   },
 ];

@@ -2,6 +2,7 @@ import { Component, inject } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { FormatterService } from "../services/formatter.service";
 import { HeaderComponent } from "../header/header.component";
+import { Title } from "@angular/platform-browser";
 
 @Component({
   selector: "app-concept-page",
@@ -13,6 +14,7 @@ export class ConceptPageComponent {
   route = inject(ActivatedRoute);
   router = inject(Router);
   format = inject(FormatterService);
+  title = inject(Title);
   page = "";
 
   nav(loc: string) {
@@ -26,6 +28,7 @@ export class ConceptPageComponent {
         this.router.navigateByUrl("/");
       } else {
         this.page = page;
+        this.title.setTitle("quDnD | " + this.format.capitalize(page));
       }
     });
   }
