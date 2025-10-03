@@ -91,6 +91,7 @@ export interface Ability {
   attacks: Attack[];
   effects: Effect[];
   indefinite: boolean;
+  willPoints: number;
 }
 
 export interface SkillBuff {
@@ -107,6 +108,7 @@ export interface Skill {
   description: string;
   prereqs: string[];
   imgUrl: string;
+  cost: number;
 }
 
 export interface Mutation {

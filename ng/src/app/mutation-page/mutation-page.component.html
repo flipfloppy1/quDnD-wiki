@@ -44,6 +44,14 @@
                 }
               </ul>
               }
+              <h4>Will Points</h4>
+                @if (ability.willPoints > 0) {
+                <div>
+                  {{ability.willPoints}}
+                </div>
+                } @else {
+                  <p class="no-entries">No WP cost.</p>
+                }
               <h3>Effects</h3>
               @if (!ability.effects.length) {
                 <p class="no-entries">No effects.</p>
