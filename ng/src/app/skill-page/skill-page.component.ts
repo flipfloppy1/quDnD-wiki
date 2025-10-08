@@ -19,6 +19,7 @@ export class SkillPageComponent {
   skillName = "";
   skill?: defs.Skill;
   route = inject(ActivatedRoute);
+  router = inject(Router)
   http = inject(HttpClient);
   title = inject(Title);
   snackbar = inject(MatSnackBar);

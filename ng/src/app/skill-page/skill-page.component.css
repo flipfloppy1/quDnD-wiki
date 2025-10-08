@@ -21,6 +21,23 @@
   text-align: justify;
 }
 
+.category-entry {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.entry-img {
+  height: 40px;
+  image-rendering: pixelated;
+}
+
+.entry-text {
+  font-size: 14pt;
+}
+
 .summary-container {
   display: flex;
   gap: 20px;

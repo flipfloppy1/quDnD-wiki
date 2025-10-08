@@ -129,6 +129,19 @@
             <p class="no-entries">No cost.</p>
           }
         </div>
+        <div>
+          <h3>Prerequisites</h3>
+          @if (skill.prereqs.length) {
+            @for (prereq of skill.prereqs; track prereq.id) {
+              <div (click)="router.navigateByUrl('/skill/' + prereq.id)" class="category-entry">
+                <img class="entry-img" [src]="prereq.imgUrl" />
+                <span class="entry-text">{{prereq.name}}</span>
+              </div>
+            }
+          } @else {
+            <p class="no-entries">No prerequisites.</p>
+          }
+        </div>
       </div>
     }
   </main>

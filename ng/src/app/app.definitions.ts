@@ -106,7 +106,7 @@ export interface Skill {
   buffs: SkillBuff[];
   abilities: Ability[];
   description: string;
-  prereqs: string[];
+  prereqs: Skill[];
   imgUrl: string;
   cost: number;
 }
